@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!-- <html lang="pt-br">  -->
+<html lang="pt-br" manifest="offline.manifest">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/planilha.css">
+	<link rel="stylesheet" type="text/css" href="css/material.css">
+	<link rel="manifest" href="app.json">
+
+</head>
+<body>
+	<header></header>
+	<main>
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+            mdl-layout--fixed-tabs">
+  <header class="mdl-layout__header">
+    <div id="mensagemView" class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Vida Financeira</span>
+    </div>
+    <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+    <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Lista de compras</a>
+      <a href="#fixed-tab-2" class="mdl-layout__tab">Gastos</a>
+      <a href="#fixed-tab-3" class="mdl-layout__tab">Receitas</a>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Vida Financeira</span>
+  </div>
+  <main class="mdl-layout__content">
+    <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+      <div  class="page-content">
+      		<dialog id="dialogCompraView" class="mdl-dialog">
+    
+  			</dialog>
+			<!-- table>(thead>tr>th*4)+(tbody>tr>td*4)+tfooter -->
+			
+    		
+			<div id="comprasView">
+			
+			</div>
+			
+			<dialog id="excluiCompra" class="mdl-dialog"></dialog>
+			<dialog id="excluiCompraTudo" class="mdl-dialog">
+				<h5 class="mdl_dialog__title">Excluir Lista de Compras</h5>
+				<div class="mdl_dialog__content">
+			<p>Deseja realmente excluir todos os registros?</p>
+				</div>
+			    <div class="mdl_dialog__actions">
+					<button type="button" onclick="compraController.close(event)" class="mdl-button">
+						NÃO
+					</button>
+				<button type="button" onclick="compraController.apaga(event)" class="mdl-button">
+  										SIM
+									</button></div>
+			</dialog>
+					<!-- <tr class="produto">
+						<td class="item">Arroz</td>
+						<td class="unidade">PCT</td>
+						<td class="quantidade">2</td>
+						<td class="valor">150.00</td>
+						<td class="total"></td>
+					</tr> -->
+			
+		
+			<!-- h2+form#form-add>div*4>label+input -->
+			
+			<dialog id="cadastraItem" class="mdl-dialog">
+    			<form >
+			
+				<div class="mdl-textfield mdl-js-textfield ">
+				    <input class="mdl-textfield__input" type="text" id="item"  name="item" type="text">
+				    <label class="mdl-textfield__label" for="item">Item...</label>
+				</div>
+			
+				<div class="mdl-textfield mdl-js-textfield  ">
+				    <input class="mdl-textfield__input" type="text" id="unidade"  name="unidade" type="text">
+				    <label class="mdl-textfield__label" for="unidade">Unidade...</label>
+				</div>	
+				<div class="mdl-textfield mdl-js-textfield  ">
+				    <input class="mdl-textfield__input" type="text" id="quantidade" pattern="-?[0-9]*(\.[0-9]+)?"  name="quantidade" type="text">
+				    <label class="mdl-textfield__label" for="quantidade">Quantidade...</label>
+					<span class="mdl-textfield__error">Quantidade deve ser número!</span>
+				</div>				  
+				<div class="mdl-textfield mdl-js-textfield ">
+					<input class="mdl-textfield__input" type="text" id="valor" pattern="-?[0-9]*(\.[0-9]+)?" name="valor" typetext">
+					<label class="mdl-textfield__label" for="valor">Preço...</label>
+					<span class="mdl-textfield__error">Preço deve ser número!</span>
+				</div>
+				
+				<div class="">
+			    <button id="adicionar-produto" onclick="compraController.adiciona(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+  				<i class="material-icons">check</i>
+				</button>
+				<button onclick="compraController.close(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--mini-fab">
+						<i class="material-icons">close</i>
+					</button>
+ 				</div>
+			
+			</form>
+  			
+  			</dialog>
+    		
+			
+	
+			
+		</div>
+		
+		<button id="abreDialog" onclick="compraController.abreDialog(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+  				<i class="material-icons">add_shopping_cart</i>
+				</button>
+    </section>
+    <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+      <div class="page-content">
+      	<!-- table>(thead>tr>th*4)+(tbody>tr>td*4)+tfooter -->
+			
+    		
+			<div id="gastosView" class="">
+			
+			</div>
+			<dialog id="dialogGastoView" class="mdl-dialog">
+    
+  			</dialog>
+			<dialog id="excluiGasto" class="mdl-dialog"></dialog>
+			<dialog id="excluiGastoTudo" class="mdl-dialog">
+				<h5 class="mdl_dialog__title">Excluir Gastos</h5>
+				<div class="mdl_dialog__content">
+			<p>Deseja realmente excluir todos os registros?</p>
+				</div>
+			    <div class="mdl_dialog__actions">
+					<button type="button" onclick="gastoController.close(event)" class="mdl-button">
+						NÃO
+					</button>
+				<button type="button" onclick="gastoController.apaga(event)" class="mdl-button">
+  										SIM
+									</button></div>
+			</dialog>
+			
+			<dialog id="cadastraGasto" class="mdl-dialog">
+    		<form >
+			
+				<div class="mdl-textfield mdl-js-textfield ">
+				    <input class="mdl-textfield__input" type="text" id="descGasto"  name="descGasto" type="text">
+				    <label class="mdl-textfield__label" for="descGasto">Descrição...</label>
+				</div>
+			
+				<div class="mdl-textfield mdl-js-textfield  ">
+				    <input class="mdl-textfield__input" type="text" id="tipoGasto"  name="tipoGasto" type="text">
+				    <label class="mdl-textfield__label" for="tipoGasto">Tipo de Gasto...</label>
+				</div>	
+				<div class="mdl-textfield mdl-js-textfield  ">
+					<input class="mdl-textfield__input" type="text" id="valorGasto" pattern="-?[0-9]*(\.[0-9]+)?" name="valorGasto" typetext">
+					<label class="mdl-textfield__label" for="valorGasto">Valor do Gasto...</label>
+					<span class="mdl-textfield__error">Valor deve ser número!</span>
+				</div>
+			
+				<div class="">
+			    <button id="adicionar-gasto" onclick="gastoController.adiciona(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+  					<i class="material-icons">add</i>
+				</button>
+				<button onclick="gastoController.close(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--mini-fab">
+						<i class="material-icons">close</i>
+					</button>
+ 
+				</div>      	
+      
+			</form>
+			</dialog>
+
+	</div>
+	<button id="abreDialogGasto" onclick="gastoController.abreDialog(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+  				<i class="material-icons">money_off</i>
+				</button>
+    </section>
+    <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+      <div class="page-content">
+      	<!-- table>(thead>tr>th*4)+(tbody>tr>td*4)+tfooter -->
+			
+    		
+			<div id="receitasView" class="">
+			
+			</div>
+			<dialog id="dialogReceitaView" class="mdl-dialog">
+    
+  			</dialog>
+			<dialog id="excluiReceita" class="mdl-dialog"></dialog>
+			<dialog id="excluiReceitaTudo" class="mdl-dialog">
+				<h5 class="mdl_dialog__title">Excluir Receitas</h5>
+				<div class="mdl_dialog__content">
+			<p>Deseja realmente excluir todos os registros?</p>
+				</div>
+			    <div class="mdl_dialog__actions">
+					<button type="button" onclick="receitaController.close(event)" class="mdl-button">
+						NÃO
+					</button>
+				<button type="button" onclick="receitaController.apaga(event)" class="mdl-button">
+  										SIM
+									</button></div>
+			</dialog>
+			 		
+			<dialog id="cadastraReceita" class="mdl-dialog">
+			<form>
+				<div class="mdl-textfield mdl-js-textfield ">
+				    <input class="mdl-textfield__input" type="text" id="descReceita"  name="descReceita" type="text">
+				    <label class="mdl-textfield__label" for="descReceita">Descrição...</label>
+				</div>
+			
+				<div class="mdl-textfield mdl-js-textfield  ">
+				    <input class="mdl-textfield__input" type="text" id="tipoReceita"  name="tipoReceita" type="text">
+				    <label class="mdl-textfield__label" for="tipoReceita">Tipo...</label>
+				</div>	
+								  
+				<div class="mdl-textfield mdl-js-textfield  ">
+					<input class="mdl-textfield__input" type="text" id="valorReceita" pattern="-?[0-9]*(\.[0-9]+)?" name="valorReceita" typetext">
+					<label class="mdl-textfield__label" for="valorReceita">Valor Recebido...</label>
+					<span class="mdl-textfield__error">Valor deve ser número!</span>
+				</div>
+			
+				<div class="">
+			    <button id="adicionar-receita" onclick="receitaController.adiciona(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+  				<i class="material-icons">add</i>
+				</button>
+				<button onclick="receitaController.close(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--mini-fab">
+						<i class="material-icons">close</i>
+					</button>
+ 				
+				</div>
+			</form>
+			</dialog>
+			<button id="abreDialogReceita" onclick="receitaController.abreDialog(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+  				<i class="material-icons">attach_money</i>
+				</button>
+
+      
+    </section>
+  </main>
+</div>
+  
+		
+	</main>
+	<footer></footer>
+	
+	<script src="js/material.js"></script>
+	<script src="js/models/Compra.js"></script>
+	<script src="js/models/Gasto.js"></script>
+	<script src="js/models/ListaCompra.js"></script>
+	<script src="js/models/ListaGasto.js"></script>
+	<script src="js/models/ListaReceita.js"></script>
+	<script src="js/models/Mensagem.js"></script>
+	<script src="js/models/Receita.js"></script>
+
+	<script src="js/storage/GastoStorage.js"></script>
+	<script src="js/storage/GastoLS.js"></script>
+	<script src="js/storage/ReceitaStorage.js"></script>
+	<script src="js/storage/CompraStorage.js"></script>
+
+	<script src="js/helpers/DateHelper.js"></script>
+	<script src="js/helpers/SnackBar.js"></script>
+	<script src="js/dialog/DialogCompra.js"></script>
+	<script src="js/dialog/DialogReceita.js"></script>
+	<script src="js/dialog/DialogGasto.js"></script>
+
+
+	<script src="js/sw/registra.js"></script> 
+
+	<script src="js/views/View.js"></script>
+	<script src="js/views/ComprasView.js"></script>
+	<script src="js/views/GastosView.js"></script>
+	<script src="js/views/ReceitasView.js"></script>
+	<script src="js/views/MensagemView.js"></script>
+	<script src="js/views/DialogCompraView.js"></script>
+	<script src="js/views/DialogReceitaView.js"></script>
+	<script src="js/views/DialogGastoView.js"></script>
+
+	<script src="js/controllers/CompraController.js"></script>
+	<script src="js/controllers/GastoController.js"></script>
+	<script src="js/controllers/ReceitaController.js"></script>
+	<script type="text/javascript">
+	
+	let compraController = new CompraController();
+	let gastoController = new GastoController();
+	let receitaController = new ReceitaController();
+</script>
+</body>
+</html>

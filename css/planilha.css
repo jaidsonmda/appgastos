@@ -1,0 +1,108 @@
+/*#lista table{
+	background-color: #ffee44; 
+
+}
+td, th {
+	padding: .7em;
+	margin: 0;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+th{
+	background-color: #FFFF44;
+}
+section{
+	margin: auto;
+	 
+	width: 100%;
+}
+form, table{
+	width: 100%;
+}*/
+#comprasView{
+  width:100%;
+}
+p{
+  height:100%;
+  text-align: center;
+  
+  margin: 0 auto;
+  padding: 0;
+  
+  
+}
+#totalCompraView, #totalReceitaView, #totalGastoView{
+  position: relative;
+  top: 0pt;
+  left: 0pt;
+  right:0pt;
+  background: white;
+  width: 100%
+  border-right: 1px solid #ccc;
+}
+.mdl-list__item{
+
+
+	border-bottom: 1px solid #ccc;
+
+}
+#abreDialog, #abreDialogGasto, #abreDialogReceita{
+  position: fixed;
+  bottom: 4pt;
+  right: 4pt;
+}
+
+/*
+.campo{
+	margin: 0;
+	padding-bottom: 1em;
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: .7em;
+	width: 100%;
+}
+
+.campo-medio{
+	display: inline-block;
+	padding-right: .5em;
+}
+
+.grupo{
+	width: 32%;
+	display: inline-block;
+	padding: 10px 0px;
+}*/
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(../fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}

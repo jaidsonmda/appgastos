@@ -1,0 +1,14 @@
+{
+	"name": "planilha",
+	"start_url": "./",
+	"dispĺay": "standalone",
+	"orientation": "landscape",
+	"icons":[
+		{
+			"src": "img/plan.png",
+			"sizes": "64x64",
+			"type": "image/png"
+		}
+	]
+
+}
