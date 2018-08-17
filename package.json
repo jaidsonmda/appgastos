@@ -1,0 +1,21 @@
+{
+  "name": "appgastos",
+  "version": "1.0.0",
+  "description": "'aplicativo de gerenciamento de custos'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/agenciajson/appgastos.git"
+  },
+  "keywords": [
+    "gastos",
+    "finanças",
+    "orçamento"
+  ],
+  "author": "Jaidson Martins de Araujo",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/agenciajson/appgastos#readme"
+}
