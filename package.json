@@ -17,5 +17,8 @@
   ],
   "author": "Jaidson Martins de Araujo",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/agenciajson/appgastos#readme"
+  "homepage": "https://bitbucket.org/agenciajson/appgastos#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
