@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "outDir": "appgastos/js"
+        "outDir": "appgastos/js",
+        "noEmitOnError": true   
     },
     "include": [
         "appgastos/ts/**/*"
