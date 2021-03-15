@@ -1,6 +1,6 @@
 
 class DialogCompra {
-    
+     dialogPolyfill = require('dialog-polyfill')
     _dialog;
     _dialogCadastra;
     _dialogExclui;
@@ -12,16 +12,16 @@ class DialogCompra {
         this._dialogExclui = $('#excluiCompra');
         this._dialogExcluiTudo = $('#excluiCompraTudo');
         if (!this._dialog.showModal) {
-            dialogPolyfill.registerDialog(this._dialog);
+            this.dialogPolyfill.registerDialog(this._dialog);
         }
         if (!this._dialogCadastra.showModal) {
-            dialogPolyfill.registerDialog(this._dialogCadastra);
+            this.dialogPolyfill.registerDialog(this._dialogCadastra);
         }
         if (!this._dialogExcluiTudo.showModal) {
-            dialogPolyfill.registerDialog(this._dialogExcluiTudo);
+            this.dialogPolyfill.registerDialog(this._dialogExcluiTudo);
         }
         if (!this._dialogExclui.showModal) {
-            dialogPolyfill.registerDialog(this._dialogExclui);
+            this.dialogPolyfill.registerDialog(this._dialogExclui);
         }
     }
 

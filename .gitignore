@@ -53,3 +53,4 @@ node_modules/typescript/lib/typescriptServices.d.ts
 node_modules/typescript/lib/typescriptServices.js
 node_modules/typescript/lib/typingsInstaller.js
 node_modules/typescript/lib/watchGuard.js
+.vscode/settings.json
