@@ -1,5 +1,6 @@
 class ListaReceita{
 	_receitas;
+	array: any;
 	constructor(){
 		this._receitas= [];
 	}

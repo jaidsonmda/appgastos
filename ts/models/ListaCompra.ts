@@ -1,5 +1,6 @@
 class ListaCompra{
 	_compras;
+	array: any;
 	constructor(){
 		this._compras= [];
 	}

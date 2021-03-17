@@ -1,5 +1,6 @@
 class ListaGasto{
 	_gastos;
+	array: any;
 	constructor(){
 		this._gastos= [];
 	}
