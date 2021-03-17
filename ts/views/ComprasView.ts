@@ -1,8 +1,17 @@
-class ComprasView extends View{
-	constructor(elemento){
-		super(elemento);
-	}
-	template(model,i){
+class ComprasView {
+	private _elemento: Element;
+
+    constructor(seletor: string) {
+
+        this._elemento = document.querySelector(seletor);
+    }
+
+    update(model: ListaCompra) {
+
+        this._elemento.innerHTML = this.template(model);
+    }
+
+    template(model: ListaCompra): string {
 			if(model.compras.length==0){
 							return`
 							<ul class="demo-list-two mdl-list">

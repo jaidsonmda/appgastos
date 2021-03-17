@@ -1,8 +1,19 @@
-class ReceitasView extends View{
-	constructor(elemento){
-		super(elemento);
-	}
-	template(model){
+class ReceitasView {
+	private _elemento: Element;
+
+    constructor(seletor: string) {
+
+        this._elemento = document.querySelector(seletor);
+    }
+
+    update(model: ListaReceita) {
+
+        this._elemento.innerHTML = this.template(model);
+    }
+
+    template(model: ListaReceita): string {
+
+   
 		if(model.receitas.length==0){
 							return`
 							<ul class="demo-list-two mdl-list">

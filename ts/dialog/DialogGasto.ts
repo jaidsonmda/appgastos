@@ -1,7 +1,7 @@
-
+import dialogPolyfill from 'node_modules/dialog-polyfill/dist/dialog-polyfill.esm.js';
 
 class DialogGasto{
-  dialogPolyfill = require('dialog-polyfill')
+ 
   _dialog
   _dialogExclui;
   _dialogExcluiTudo;
@@ -14,16 +14,16 @@ class DialogGasto{
     	this._dialogExclui = $('#excluiGasto');
     	this._dialogExcluiTudo = $('#excluiGastoTudo');
     	if (! this._dialog.showModal) {
-      		this.dialogPolyfill.registerDialog(this._dialog);
+      		dialogPolyfill.registerDialog(this._dialog);
     	}
     	if (! this._dialogCadastra.showModal) {
-      		this.dialogPolyfill.registerDialog(this._dialogCadastra);
+      		dialogPolyfill.registerDialog(this._dialogCadastra);
     	}
       if (! this._dialogExcluiTudo.showModal) {
-          this.dialogPolyfill.registerDialog(this._dialogExcluiTudo);
+          dialogPolyfill.registerDialog(this._dialogExcluiTudo);
       }
       if (! this._dialogExclui.showModal) {
-          this.dialogPolyfill.registerDialog(this._dialogExclui);
+          dialogPolyfill.registerDialog(this._dialogExclui);
       }
 	}
     showDialogButton(){

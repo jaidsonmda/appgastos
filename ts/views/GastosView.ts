@@ -1,8 +1,16 @@
-class GastosView extends View{
-	constructor(elemento){
-		super(elemento);
-	}
-	template(model){
+class GastosView{
+	private _elemento: Element;
+
+    constructor(seletor: string) {
+
+        this._elemento = document.querySelector(seletor);
+    }
+
+    update(model: ListaGasto) {
+
+        this._elemento.innerHTML = this.template(model);
+    }
+	template(model: ListaGasto) :string{
 		if(model.gastos.length==0){
 							return`
 							<ul class="demo-list-two mdl-list">

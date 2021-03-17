@@ -1,4 +1,18 @@
 class ReceitaController{
+	
+	_dialogReceita;
+	_dialogReceitaView;
+	_inputDesc;
+	_inputTipo;
+	_inputValor;
+	
+	_listaReceitas;
+	_mensagem;
+	_mensagemView;
+	_receitasStorage;
+	_receitasView;
+	_snackMensagem;
+	
 	constructor(){
 		let $ = document.querySelector.bind(document);
 		

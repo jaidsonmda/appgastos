@@ -1,10 +1,20 @@
-class DialogGastoView extends View{
-	constructor(elemento){
-		super(elemento);
-	}
-	template(model,i){
+class DialogGastoView{
+	private _elemento: Element;
+
+    constructor(seletor: string) {
+
+        this._elemento = document.querySelector(seletor);
+    }
+
+    update(model: ListaGasto, i) {
+
+        this._elemento.innerHTML = this.template(model,i);
+    }
+
+    template(model: ListaGasto, i): string {
+	
 		console.log("entrou em template posicao "+i)
-		return model.map(g =>{
+		return model._gastos.map(g =>{
 			return	`
     			<form>
     				<div class="mdl-textfield mdl-js-textfield ">

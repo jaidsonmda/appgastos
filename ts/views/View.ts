@@ -3,10 +3,10 @@ class View{
 	constructor(elemento){
 		this._elemento = elemento;
 	}
-	template(){
+	template(model:any){
 		throw new Error('O Método deve ser implementado!');
 	}
-	update(){
+	update(model:any){
 		this._elemento.innerHTML = this.template(model);
 	}
 }

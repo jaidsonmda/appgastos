@@ -1,4 +1,15 @@
-class CompraController{
+class PedidoController{
+	_inputItem;
+	_inputUnidade;
+	_inputQuantidade;
+	_inputValor;
+	_listaCompras;
+	_comprasStorage;
+	_snackMensagem;
+	_dialogCompra;
+	_comprasView;
+	_dialogComprasView;
+	_mensagem;
 	constructor(){//evitar percorrer o dom
 		let $ = document.querySelector.bind(document);
 		this._inputItem = $('#item');

@@ -1,6 +1,6 @@
-
+import dialogPolyfill from 'node_modules/dialog-polyfill/dist/dialog-polyfill.esm.js';
 class DialogCompra {
-     dialogPolyfill = require('dialog-polyfill')
+     dialogPoly= dialogPolyfill;
     _dialog;
     _dialogCadastra;
     _dialogExclui;
@@ -12,16 +12,16 @@ class DialogCompra {
         this._dialogExclui = $('#excluiCompra');
         this._dialogExcluiTudo = $('#excluiCompraTudo');
         if (!this._dialog.showModal) {
-            this.dialogPolyfill.registerDialog(this._dialog);
+           dialogPolyfill.registerDialog(this._dialog);
         }
         if (!this._dialogCadastra.showModal) {
-            this.dialogPolyfill.registerDialog(this._dialogCadastra);
+            this.dialogPoly.registerDialog(this._dialogCadastra);
         }
         if (!this._dialogExcluiTudo.showModal) {
-            this.dialogPolyfill.registerDialog(this._dialogExcluiTudo);
+            this.dialogPoly.registerDialog(this._dialogExcluiTudo);
         }
         if (!this._dialogExclui.showModal) {
-            this.dialogPolyfill.registerDialog(this._dialogExclui);
+            dialogPolyfill.registerDialog(this._dialogExclui);
         }
     }
 

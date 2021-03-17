@@ -1,10 +1,20 @@
-class DialogCompraView extends View{
-	constructor(elemento){
-		super(elemento);
-	}
-	template(model,i){
+class DialogCompraView {
+	private _elemento: Element;
+
+    constructor(seletor: string) {
+
+        this._elemento = document.querySelector(seletor);
+    }
+
+    update(model: ListaCompra, i) {
+
+        this._elemento.innerHTML = this.template(model,i);
+    }
+
+    template(model: ListaCompra, i): string {
+	
 		console.log("entrou em template posicao "+i)
-		return model.map(c =>{
+		return model._compras.map(c =>{
 			return	`
     			<form>
     				<div class="mdl-textfield mdl-js-textfield ">

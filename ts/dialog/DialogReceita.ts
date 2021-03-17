@@ -1,5 +1,6 @@
+import dialogPolyfill from 'node_modules/dialog-polyfill/dist/dialog-polyfill.esm.js';
 class DialogReceita{
-  dialogPolyfill = require('dialog-polyfill')
+  
   _dialog;
   _dialogCadastra;
   _dialogExclui;

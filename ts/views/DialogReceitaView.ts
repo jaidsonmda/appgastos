@@ -1,10 +1,20 @@
-class DialogReceitaView extends View{
-	constructor(elemento){
-		super(elemento);
-	}
-	template(model, i){
+class DialogReceitaView {
+	private _elemento: Element;
+
+    constructor(seletor: string) {
+
+        this._elemento = document.querySelector(seletor);
+    }
+
+    update(model: ListaReceita, i) {
+
+        this._elemento.innerHTML = this.template(model,i);
+    }
+
+    template(model: ListaReceita, i): string {
+	
 		console.log("entrou em template posicao "+i)
-		return model.map(r =>{
+		return model._receitas.map(r =>{
 			return	`
     			<form>
     				<div class="mdl-textfield mdl-js-textfield ">
