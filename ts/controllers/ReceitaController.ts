@@ -1,3 +1,4 @@
+import {DialogReceita} from '../dialog/DialogReceita';
 class ReceitaController{
 	
 	_dialogReceita;

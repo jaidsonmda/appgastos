@@ -1,4 +1,4 @@
-
+import {DialogGasto} from '../dialog/DialogGasto';
 class GastoController{
 	_dialogGasto;
 	_dialogGastoView;

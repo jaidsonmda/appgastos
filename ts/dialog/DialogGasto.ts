@@ -1,6 +1,6 @@
-import dialogPolyfill from 'node_modules/dialog-polyfill/dist/dialog-polyfill.esm.js';
+import {dialogPolyfill} from 'node_modules/dialog-polyfill/dist/dialog-polyfill.esm.js';
 
-class DialogGasto{
+export class DialogGasto{
  
   _dialog
   _dialogExclui;

@@ -1,3 +1,4 @@
+import {DialogCompra} from '../dialog/DialogCompra';
 class PedidoController{
 	_inputItem;
 	_inputUnidade;

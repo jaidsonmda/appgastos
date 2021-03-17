@@ -1,5 +1,5 @@
-import dialogPolyfill from 'node_modules/dialog-polyfill/dist/dialog-polyfill.esm.js';
-class DialogReceita{
+import {dialogPolyfill} from 'node_modules/dialog-polyfill/dist/dialog-polyfill.esm.js';
+export class DialogReceita{
   
   _dialog;
   _dialogCadastra;
