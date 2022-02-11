@@ -1,0 +1,129 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "API de Acompanhamento de gastos",
+    "description" : "API para controlar Receitas e despesas mensais",
+    "license" : {
+      "name" : "Licença GPLv3",
+      "url" : "https://www.gnu.org/licenses/quick-guide-gplv3.pt-br.html"
+    },
+    "version" : "v1-oas3"
+  },
+  "externalDocs" : {
+    "description" : "Legislação",
+    "url" : "https://mockapi.io"
+  },
+  "servers" : [ {
+    "url" : "https://62064ba692dd6600171c0981.mockapi.io/api/v1/",
+    "description" : "API de Test"
+  } ],
+  "paths" : {
+    "/incomes" : {
+      "get" : {
+        "summary" : "Recupera todos os registros de receitas",
+        "responses" : {
+          "200" : {
+            "description" : "Sucesso",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/inline_response_200"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Cria nova especialidade",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/incomes_body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Sucesso"
+          }
+        }
+      }
+    },
+    "/incomes/{id}" : {
+      "get" : {
+        "summary" : "Recupera uma entidade pelo ID",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Sucesso",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Especialidade não encontrada",
+            "content" : {
+              "application/json" : {
+                "example" : "Not Found"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "value" : {
+            "type" : "number"
+          },
+          "payday" : {
+            "type" : "string"
+          },
+          "type_income" : {
+            "type" : "string"
+          }
+        }
+      },
+      "incomes_body" : {
+        "type" : "object",
+        "properties" : {
+          "value" : {
+            "type" : "number"
+          },
+          "payday" : {
+            "type" : "string"
+          },
+          "type_income" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
